@@ -144,18 +144,22 @@
     gap: 14px;
     border: 1px solid var(--white);
     border-radius: 10px;
-    padding: 5px 15px;
+    padding: 5px 30px 5px 15px;
     background-color: var(--grey);
     span {
       font-weight: 300;
       font-size: 15px;
       color: #6e6e6e;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
     &-icon {
       display: flex;
       align-items: center;
       justify-content: center;
       @include size(32px, 100%);
+      flex: 0 0 auto;
       border: 1px solid var(--primary);
       color: var(--primary);
       font-size: 13px;
