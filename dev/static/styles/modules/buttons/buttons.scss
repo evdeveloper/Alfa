@@ -1,0 +1,55 @@
+.Button {
+  $this: &;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--button-font-weight);
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0 30px;
+  font-family: var(--button-font-family);
+  height: var(--button-height);
+  text-transform: var(--button-text-transform);
+  border: 1px solid var(--black-title);
+  color: var(--button-color);
+  transition: all var(--duration);
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-background-color);
+  &:hover,
+  &:active {
+    border-color: var(--primary);
+    --button-color: var(--primary);
+  }
+  &_Red {
+    --button-background-color: var(--primary);
+    border-color: var(--primary);
+    --button-color: var(--white);
+    &:hover,
+    &:active {
+      --button-background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+      --button-color: var(--white);
+    }
+  }
+  &_White {
+    border-color: var(--white);
+    --button-color: var(--white);
+    --button-background-color: transparent;
+    &:hover,
+    &:active {
+      --button-background-color: rgba(255, 255, 255, 0.2);
+      --button-color: var(--white);
+      border-color: var(--white);
+    }
+  }
+  &_Full {
+    width: 100%;
+  }
+
+  @include media($desktop) {
+    --button-height: 50px;
+    font-size: 15px;
+    padding: 0 28px;
+  }
+}

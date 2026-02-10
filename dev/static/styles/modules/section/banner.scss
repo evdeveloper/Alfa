@@ -1,0 +1,110 @@
+.s-banner {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 170px 0 90px;
+  @include media($mobile) {
+    padding: 80px 0;
+  }
+}
+
+.banner {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  &__title {
+    margin: 70px 0 10px;
+    text-align: center;
+    span { color: var(--primary); }
+    @include media($mobile) {
+      margin: 30px 0 10px;
+    }
+  }
+  p {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 119%;
+    margin-bottom: 52px;
+    @include media($mobile) {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+  }
+  &__btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    @include media($mobile) { flex-direction: column; }
+  }
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 24px;
+  &__icon {
+    width: 18px;
+    height: 23px;
+    fill: var(--white);
+  }
+  @include media($mobile) {
+    font-size: 20px;
+  }
+}
+
+.avdCircle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 36px;
+  @include media($mobile) {
+    max-width: 320px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 8px;
+    margin: 0 auto 30px;
+  }
+  &__item {
+    position: relative;
+    @include size(142px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 10px 10px;
+    gap: 4px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 114%;
+    border-radius: 100%;
+    backdrop-filter: blur(15.6px);
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(254, 253, 253, 0.19);
+    &:not(:last-child) {
+      margin-right: -4px;
+    }
+    &:nth-child(1) { z-index: 4; }
+    &:nth-child(2) { z-index: 3; }
+    &:nth-child(3) { z-index: 2; }
+    br { display: none; }
+    @include media($mobile) {
+      &:not(:last-child) { margin-right: 0; }
+      width: auto;
+      height: auto;
+      border: none;
+      padding: 0;
+      background-color: transparent;
+      flex-direction: row;
+      gap: 10px;
+      font-size: 15px;
+      text-align: left;
+      br { display: block; }
+    }
+  }
+  &__icon {
+    @include size(22px);
+    fill: var(--primary);
+  }
+}

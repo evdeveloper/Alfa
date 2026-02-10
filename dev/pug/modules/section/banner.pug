@@ -1,0 +1,41 @@
+section.s-banner(style="background-image: url('static/images/img/banner.jpg')")
+  .container
+    .banner
+      .location 
+        +icon('location','location__icon')
+        span Санкт-Петербург и ЛО
+      h1.banner__title 
+        | Снабжение объектов 
+        span под ключ
+      p 
+        | Экономьте на закупках. 
+        br
+        | Один поставщик для всех материалов
+      .avdCircle
+        .avdCircle__item
+          +icon('mark','avdCircle__icon')
+          span 
+            | Отсрочка 
+            br
+            | платежа
+        .avdCircle__item
+          +icon('mark','avdCircle__icon')
+          span 
+            | Собственное 
+            br
+            | производство
+        .avdCircle__item
+          +icon('mark','avdCircle__icon')
+          span 
+            | Работаем 
+            br
+            | с НДС
+        .avdCircle__item
+          +icon('mark','avdCircle__icon')
+          span 
+            | Доставка 
+            br
+            | по России
+      .banner__btn 
+        a(href="#").Button.Button_White Задать вопрос
+        a(href="#").Button.Button_Red Получить расчет

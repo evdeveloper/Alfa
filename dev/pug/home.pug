@@ -1,0 +1,16 @@
+extends template/main
+
+block variables
+  - var title = 'Главная страница'
+  - var pageClass = 'home-page'
+
+
+
+block content
+  include modules/section/banner
+  include modules/section/advantages
+  include modules/section/materials
+  include modules/section/about
+  include modules/section/catalog
+  include modules/section/news
+  include modules/section/feedback

@@ -1,0 +1,117 @@
+.modalContainer
+  .modal(style="background-image: url('static/images/img/form/bg.jpg')")
+    .modal__close 
+      +icon('close','modal__close-icon')
+    .modal__title 
+      | Мы свяжемся с вами в течении 
+      br
+      | 15 минут с 9-00 до 18-00 по будням
+    form(action="/" class="modal__form")
+      .form__field.modal__field
+        label(class="form__label") Ваш номер *
+        input(type="text" class="form__input" name="phone" autocomplete="off" placeholder="+7 (999) 999-99-99")
+      .form__field.modal__field
+        label(class="form__label") Ваше имя *
+        input(type="text" class="form__input" name="name" autocomplete="off" placeholder="Иван")
+      .form__field.modal__field
+        label(for="msg" class="form__label") Ваш комментарий
+        textarea(name="msg" id="msg" class="form__textarea" placeholder="Введите текст")
+      .form__field.modal__file
+        .form__label Загрузить файл
+        label(for="file")
+          input(type="file" class="form__input-file" name="file" id="file" accept=".pdf,.doc,.docx,.rtf,.txt")
+          .form__upload 
+            +icon('plus','form__upload-icon')
+            span Загрузить файлы doc, docx, txt, rtf, pdf
+          .file__add Добавить файлы
+          .file__list
+            .file__item
+              .file__item-icon pdf
+              span Название документа.pdf
+              .file__close
+                +icon('close-thin', 'file__close-icon')
+            .file__item
+              .file__item-icon pdf
+              span Название документа.pdf
+              .file__close
+                +icon('close-thin', 'file__close-icon')
+            .file__item
+              .file__item-icon pdf
+              span Название документа.pdf
+              .file__close
+                +icon('close-thin', 'file__close-icon')
+      button(type="submit" class="Button Button_Red Button_Full") Отправить
+      .agree Нажимая на кнопку “Отправить” вы соглашаетесь на обработку пользовательских данных
+  .modal(style="background-image: url('static/images/img/form/bg.jpg')")
+    .modal__close 
+      +icon('close','modal__close-icon')
+    .modal__title 
+      | Мы свяжемся с вами в течении 
+      br
+      | 15 минут с 9-00 до 18-00 по будням
+    .modal__subtitle 
+      | В остальное время вы можете оставить ваш вопрос или расчет 
+      a(href="#") здесь
+    form(action="/" class="modal__form")
+      .form__field.modal__field
+        label(class="form__label") Ваш номер *
+        input(type="text" class="form__input" name="phone" autocomplete="off" placeholder="+7 (999) 999-99-99")
+      .form__field.modal__field
+        label(class="form__label") Ваше имя *
+        input(type="text" class="form__input" name="name" autocomplete="off" placeholder="Иван")
+      button(type="submit" class="Button Button_Red Button_Full") Отправить
+      .agree Нажимая на кнопку “Отправить” вы соглашаетесь на обработку пользовательских данных
+  .modal(style="background-image: url('static/images/img/form/bg.jpg')")
+    .modal__close 
+      +icon('close','modal__close-icon')
+    .modal__title Участвуем в тендерах и выигрываем
+    .modal__subtitle 
+      | Подготовим все документы за 2 часа. 
+      br
+      | Специальные цены для тендерных заявок
+    form(action="/" class="modal__form")
+      .form__field.modal__field
+        label(class="form__label") Ваш номер *
+        input(type="text" class="form__input" name="phone" autocomplete="off" placeholder="+7 (999) 999-99-99")
+      .form__field.modal__field
+        label(class="form__label") Ваше имя *
+        input(type="text" class="form__input" name="name" autocomplete="off" placeholder="Иван")
+      .form__field.modal__field
+        label(for="msg" class="form__label") Ваш комментарий
+        textarea(name="msg" id="msg" class="form__textarea" placeholder="Введите текст")
+      .form__field.modal__textarea
+        .form__label Загрузить файл
+        label(for="file")
+          input(type="file" class="form__input-file" name="file" id="file" accept=".pdf,.doc,.docx,.rtf,.txt")
+          .form__upload 
+            +icon('plus','form__upload-icon')
+            span Загрузить файлы doc, docx, txt, rtf, pdf
+      button(type="submit" class="Button Button_Red Button_Full") Отправить
+      .agree Нажимая на кнопку “Отправить” вы соглашаетесь на обработку пользовательских данных
+  .modal(style="background-image: url('static/images/img/form/bg.jpg')")
+    .modal__close 
+      +icon('close','modal__close-icon')
+    .modal__title 
+      | Мы свяжемся с вами в течении 
+      br
+      | 15 минут с 9-00 до 18-00 по будням
+    .modal__subtitle 
+      | В остальное время вы можете оставить ваш вопрос или расчет 
+      a(href="#") здесь
+    form(action="/" class="modal__form")
+      .form__field.modal__field
+        label(class="form__label") Ваш номер *
+        input(type="text" class="form__input" name="phone" autocomplete="off" placeholder="+7 (999) 999-99-99")
+      .form__field.modal__field
+        label(class="form__label") Ваше имя *
+        input(type="text" class="form__input" name="name" autocomplete="off" placeholder="Иван")
+      .form__field.modal__field
+        label(for="msg" class="form__label") Ваш комментарий
+        textarea(name="msg" id="msg" class="form__textarea" placeholder="Введите текст")
+      button(type="submit" class="Button Button_Red Button_Full") Отправить
+      .agree Нажимая на кнопку “Отправить” вы соглашаетесь на обработку пользовательских данных
+  .modal__success
+    .modal__success-title Спасибо
+    .modal__success-subtitle Ваши данные успешно отправлены
+    button(type="button" class="Button Button_Red Button_Full") Оk
+    

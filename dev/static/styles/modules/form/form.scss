@@ -1,0 +1,181 @@
+.form {
+  $this: &;
+
+  &__inner {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    @include media($ipad) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 12px;
+    @include media($mobile) { gap: 10px; }
+  }
+  &__input {
+    border: 1px solid var(--white);
+    border-radius: 6px;
+    height: 50px;
+    padding: 0 28px;
+    font-size: 16px;
+    font-family: var(--font-family);
+    color: var(--white);
+    backdrop-filter: blur(6.2px);
+    background: rgba(255, 255, 255, 0.24);
+    &::placeholder {
+      text-transform: uppercase;
+      color: var(--white);
+      transition: opacity var(--duration);
+    }
+    &:focus {
+      &::placeholder { opacity: 0; }
+    }
+    &-file {
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+    @include media($mobile) {
+      height: 44px;
+      font-size: 14px;
+      padding: 0 20px;
+    }
+  }
+  &__label {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    @include media($mobile) { font-size: 13px; }
+  }
+  &__upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--white);
+    border-radius: 6px;
+    height: 50px;
+    padding: 0 28px;
+    text-transform: uppercase;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    color: var(--white);
+    backdrop-filter: blur(6.2px);;
+    background: rgba(255, 255, 255, 0.24);
+    &-icon {
+      @include size(14px);
+      flex: 0 0 auto;
+      fill: var(--white);
+    }
+    span {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    @include media($mobile) {
+      height: 44px;
+      font-size: 14px;
+      padding: 0 20px;
+    }
+  }
+  &__agree {
+    font-size: 13px;
+    text-align: right;
+    color: #c2c2c2;
+    margin-top: 12px;
+    @include media($ipad) { text-align: center; }
+  }
+  &__textarea {
+    border: 1px solid var(--white);
+    border-radius: 6px;
+    min-height: 74px;
+    padding: 12px 28px;
+    resize: none;
+    font-size: 16px;
+    font-family: var(--font-family);
+    color: var(--white);
+    backdrop-filter: blur(6.2px);
+    background: rgba(255, 255, 255, 0.24);
+    &::placeholder {
+      text-transform: uppercase;
+      color: var(--white);
+      transition: opacity var(--duration);
+    }
+    &:focus {
+      &::placeholder { opacity: 0; }
+    }
+    @include media($mobile) {
+      min-height: 64px;
+      font-size: 14px;
+      padding: 12px 20px;
+    }
+  }
+}
+.file {
+  &__add {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0 30px;
+    height: 40px;
+    background: #edeaea;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #414141;
+    margin-top: 16px;
+    cursor: pointer;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 16px;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid var(--white);
+    border-radius: 10px;
+    padding: 5px 15px;
+    background-color: var(--grey);
+    span {
+      font-weight: 300;
+      font-size: 15px;
+      color: #6e6e6e;
+    }
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include size(32px, 100%);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      font-size: 13px;
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    @include size(20px, 100%);
+    background-color: #949494;
+    padding: 4px;
+    &-icon {
+      @include size(100%);
+      fill: var(--white);
+    }
+  }
+}

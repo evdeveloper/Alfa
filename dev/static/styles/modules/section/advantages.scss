@@ -1,0 +1,67 @@
+.advantages  {
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    @include media($tablet) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  &__item {
+    padding: 50px 40px;
+    border-radius: 20px;
+    background-color: var(--grey);
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top right;
+    &:nth-child(1),
+    &:nth-child(5) {
+      grid-column: span 2;
+      @include media($tablet) { grid-column: span 1; }
+    }
+    &:nth-child(2) {
+      grid-row: span 2;
+      @include media($tablet) { grid-row: span 1; }
+    }
+    @include media($desktop) {
+      padding: 36px 30px;
+    }
+    @include media($mobile) {
+      border-radius: 16px;
+      padding: 30px 20px;
+    }
+  }
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 41px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    @include media($desktop) {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    @include media($mobile) { margin-bottom: 10px; }
+  }
+  &__descr {
+    font-size: 22px;
+    line-height: 127%;
+    color: var(--light-grey);
+    @include media($desktop) {
+      font-size: 17px;
+      line-height: 124%;
+    }
+    @include media($mobile) { font-size: 16px; }
+  }
+  &__btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    @include media($desktop) { margin-top: 30px; }
+    @include media($tablet) {
+      margin-top: 20px;
+      justify-content: center;
+    }
+  }
+}

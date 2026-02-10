@@ -1,0 +1,72 @@
+.link {
+  $this: &;
+
+  @include size(44px, 8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px;
+  flex: 0 0 auto;
+  border: 1px solid #B5B5B5;
+  transition: border-color var(--duration), background-color var(--duration);
+  @include media($desktop) {
+    @include size(32px, 6px);
+    padding: 9px;
+  }
+  &__icon {
+    @include size(100%);
+    transition: fill var(--duration);
+    fill: #B5B5B5;
+  }
+  &:hover {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    #{$this}__icon { fill: var(--white); }
+  }
+}
+
+.countdown {
+  $this: &;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 35px;
+  @include media($desktop) {
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    color: var(--white);
+    @include media($desktop) { font-size: 17px; }
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 73px;
+    color: rgba(255, 255, 255, 0.93);
+    @include media($desktop) { font-size: 53px; }
+    @include media($mobile) { font-size: 10.395vw; }
+  }
+  &__dots {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    letter-spacing: 1.5px;
+  }
+  &__number {
+    text-align: center;
+    background: #661313;
+    border-radius: 6px;
+    padding: 0 6px;
+    @include media($desktop) { padding: 0 4px; }
+  }
+}

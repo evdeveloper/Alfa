@@ -1,0 +1,124 @@
+.s-strengths {
+  background-color: var(--grey);
+}
+
+.strengths {
+  $this: &;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+    gap: 10px;
+    @include media($desktop) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 376px);
+    }
+    @include media($ipad) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  &__inner {
+    border-radius: 20px;
+    padding: 60px 55px;
+    background: #1F1F1F;
+    background: linear-gradient(90deg, #1F1F1F, #5A2121);
+    @include media($desktop) { padding: 44px 37px; }
+    @include media($tablet) { padding: 30px 16px; }
+  }
+  &__picture {    
+    overflow: hidden;
+    border-radius: 20px;
+    img {
+      @include size(100%);
+      object-fit: cover;
+    }
+    @include media($desktop) { border-radius: 16px; }
+  }
+  &__item {
+    position: relative;
+    border-radius: 10px;
+    padding: 24px 24px 24px 90px;
+    background: rgba(255, 255, 255, 0.04);
+    &.error {
+      #{$this}__img { border: 1px solid #B24949; }
+      #{$this}__icon { fill: #B24949; }
+    }
+    @include media($desktop) {
+      padding: 22px 18px 22px 65px;
+    }
+    @include media($mobile) {
+      padding: 8px 8px 8px 40px;
+    }
+  }
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 41px;
+    line-height: 98%;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 16px;
+    @include media($desktop) {
+      margin-bottom: 12px;
+      font-size: 30px;
+    }
+    @include media($mobile) {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  }
+  &__text {
+    font-size: 22px;
+    line-height: 127%;
+    color: #cecece;
+    @include media($desktop) {
+      font-size: 17px;
+      line-height: 124%;
+    }
+    @include media($mobile) { font-size: 12px; }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 20px;
+    @include media($tablet) { gap: 10px 16px; }
+    @include media($mobile) { gap: 6px 8px; }
+  }
+  &__img {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    @include size(45px, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #28964d;
+    @include media($desktop) {
+      @include size(32px, 100%);
+      left: 18px;
+    }
+    @include media($mobile) {
+      @include size(18px, 100%);
+      left: 10px;
+      top: 12px;
+      transform: none;
+    }
+  }
+  &__icon {
+    fill: #28964d;
+    @include size(22px);
+    @include media($desktop) { @include size(16px); }
+    @include media($mobile) { @include size(8px); }
+  }
+  &__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    @include media($desktop) { margin-top: 30px; }
+    @include media($mobile) { margin-top: 20px; }
+  }
+}

@@ -1,0 +1,76 @@
+@mixin size($a, $border: false) {
+  width: #{$a};
+  height: #{$a};
+  @if $border {
+    border-radius: #{$border};
+  }
+}
+
+@mixin scrollbars($size: var(--scroll-size), $foreground-color: var(--scroll-thumb), $background-color: var(--scroll-track)) {
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+  scrollbar-color: $foreground-color $background-color;
+}
+
+@mixin center() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%)
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
+@mixin links ($link, $visited, $hover, $active) {
+  & {
+    color: $link;
+    &:visited {
+        color: $visited;
+    }
+    &:hover {
+        color: $hover;
+    }
+    &:active, &:focus {
+        color: $active;
+    }
+  }
+}
+
+@mixin media($size) {
+  @media screen and (max-width: #{$size}px) {
+    @content;
+  }
+}
+
+@mixin media-min($size) {
+  @media screen and (min-width: #{$size}px) {
+    @content;
+  }
+}
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin line-clamp($count) {
+  display: -webkit-box;
+  -webkit-line-clamp: $count;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+

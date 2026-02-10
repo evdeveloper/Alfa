@@ -1,0 +1,26 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+  head
+    meta(charset="utf-8")
+    title #{title}
+    <!--[if IE]>
+    meta(http-equiv='X-UA-Compatible' content="IE = edge")   
+    <![endif]-->
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    meta(name="keywords" content="")
+    meta(name="description" content="")
+    meta(name="color-theme" content="")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet")
+    link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+
+    <!--[if lt IE 9]>
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
+    <![endif]-->
+  body(class=pageClass)
+    block content
+    block script

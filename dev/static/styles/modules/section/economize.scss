@@ -1,0 +1,66 @@
+.economize {
+  $this: &;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    @include media($tablet) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @include media($mobile) { gap: 6px; }
+  }
+  &__item {
+    border-radius: 20px;
+    padding: 30px;
+    background: linear-gradient(180deg, #e5e5e5 0%, #fafafa 100%);
+    &:nth-child(3) {
+      border: 1px solid #e0e0e0;
+      background: var(--white);
+    }
+    @include media($desktop) {
+      border-radius: 15px;
+      padding: 22px;
+    }
+    @include media($mobile) { 
+      border-radius: 10px;
+      padding: 16px;
+    }
+  }
+  &__count {
+    margin-bottom: 20px;
+    @include media($desktop) { margin-bottom: 14px; }
+    @include media($mobile) { margin-bottom: 10px; }
+  }
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 41px;
+    line-height: 98%;
+    color: var(--light-grey);
+    margin-bottom: 16px;
+    @include media($desktop) { 
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+    @include media($mobile) { 
+      font-size: 18px;
+      line-height: normal;
+    }
+  }
+  &__time {
+    display: inline-flex;
+    background-color: rgba(249, 181, 181, 0.71);
+    padding: 4px 15px;
+    font-size: 20px;
+    color: #945b5b;
+    border-radius: 50px;
+    @include media($desktop) { font-size: 15px; }
+    @include media($mobile) { font-size: 12px; }
+  }
+  &__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    @include media($desktop) { margin-top: 30px; }
+    @include media($mobile) { margin-top: 20px; }
+  }
+}

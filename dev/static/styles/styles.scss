@@ -1,0 +1,136 @@
+$desktop: 1600;
+$laptop: 1441;
+$ipad: 1025;
+$tablet: 769;
+$mobile: 481;
+
+
+:root {
+  --font-family: "Rubik", sans-serif;
+  --second-family: "Bebas Neue", sans-serif;
+  --base-font-size: 16px;
+  --white:#fff;
+  --black:#000;
+  --primary: #c02122;
+  --primary-hover: #9A1E1E;
+	--black-title: #101010;
+	--light-grey: #4b4b4b;
+	--grey: #f5f5f5;
+  --duration: 0.3s;
+
+  // button settings
+  --button-font-family: var(--font-family);
+  --button-height: 64px;
+  --button-border-radius: 7px;
+  --button-background-color: var(--white);
+  --button-font-weight: normal;
+  --button-text-transform: uppercase;
+  --button-color: var(--black-title);
+}
+
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+
+html {
+  font-size: var(--base-font-size);
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: var(--font-family);
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  background-color: var(--white);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--white);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+  font-family: var(--second-family);
+  text-transform: uppercase;
+  line-height: 104%;
+}
+
+h1 {
+  font-size: 4.896vw;
+  @include media($tablet) { font-size: 50px; }
+}
+
+h2 {
+  font-size: 5.764vw;
+  @include media($desktop) { font-size: 4.375vw; }
+  @include media($tablet) { font-size: 43px; }
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a { text-decoration: none; }
+
+p { margin: 0; }
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video,
+textarea { vertical-align: middle; }
+
+textarea { resize: none; }
+
+section { 
+  position: relative;
+}
+
+.section {
+  padding: 100px 0;
+  @include media($mobile) { padding: 60px 0; }
+  &__title {
+    margin-bottom: 40px;
+    @include media($desktop) { margin-bottom: 30px; }
+    @include media($mobile) { margin-bottom: 20px; }
+  }
+}
+
+
+input,
+select,
+button,
+textarea { outline: none; border: none; background-color: transparent; }
+
+*, *:before, *:after { box-sizing: border-box; }
+
+
+.content { flex: 1 0 auto; }
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 15px;
+  @include media($desktop) { max-width: 1190px; }
+}
+
+//Модули
+@import "modules/modules";

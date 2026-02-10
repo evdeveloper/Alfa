@@ -1,0 +1,30 @@
+.s-feedback
+  .container 
+    .feedback(style="background-image: url('static/images/img/form.jpg')")
+      h2.feedback__title
+        if pageClass === 'landing-page'
+          | Получите особые условия 
+          br
+          span на первую поставку
+        else
+          | Мы свяжемся с вами в течении 
+          br
+          | 15 минут 
+          span с 9-00 до 18-00 по будням
+      if pageClass === 'home-page'
+        .feedback__text
+          | В остальное время вы можете оставить ваш вопрос или расчет 
+          a(href="#") здесь
+      form(action="/" class="feedback__form")
+        .form__inner
+          .form__field
+            label(for="phone" class="form__label") Ваш номер *
+            input(type="text" class="form__input" name="phone" autocomplete="off" id="phone" placeholder="+7 (999) 999-99-99")
+          .form__field
+            label(for="name" class="form__label") Ваше имя *
+            input(type="text" class="form__input" name="name" autocomplete="off" id="name" placeholder="Иван")
+          button(type="submit" class="Button Button_Red") Получить скидку
+        .form__agree 
+          | Нажимая на кнопку “Отправить” вы соглашаетесь 
+          br
+          | на обработку пользовательских данных

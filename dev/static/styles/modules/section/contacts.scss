@@ -1,0 +1,90 @@
+.contacts {
+  $this: &;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    @include media($tablet) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include media($mobile) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  &__item {
+    padding: 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--grey);
+    @include media($desktop) {
+      padding: 36px;
+      border-radius: 15px;
+    }
+    @include media($mobile) { padding: 30px; }
+    &.single {
+      grid-column: span 3;
+      background-size: contain;
+      background-position: top right;
+      #{$this}__wrapper {
+        max-width: 75%;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        @include media($tablet) { max-width: 100%; flex-direction: column; }
+      }
+      #{$this}__title,
+      #{$this}__info { margin-bottom: 0; }
+      @include media($tablet) { 
+        grid-column: span 1;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 41px;
+    margin-bottom: 30px;
+    @include media($desktop) {
+      font-size: 30px;
+      margin-bottom: 22px;
+    }
+    @include media($mobile) { 
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+  }
+  &__subtitle {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 100%;
+    color: var(--light-grey);
+    margin-bottom: 16px;
+    @include media($desktop) {
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+  }
+  &__info {
+    &:not(:last-child) { margin-bottom: 28px; }
+    @include media($desktop) {
+      &:not(:last-child) { margin-bottom: 20px; }
+    }
+  }
+  &__elem {
+    font-size: 22px;
+    line-height: 127%;
+    color: var(--light-grey);
+    a { color: var(--light-grey); }
+    &:not(:last-child) { margin-bottom: 8px; }
+    @include media($desktop) {
+      font-size: 17px;
+      &:not(:last-child) { margin-bottom: 6px; }
+    }
+  }
+}

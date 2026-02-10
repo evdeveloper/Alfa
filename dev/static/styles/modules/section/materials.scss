@@ -1,0 +1,55 @@
+.materials {
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    @include media(1201) {
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+    @include media($tablet) {
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    height: 386px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--white), linear-gradient(360deg, #f8f6f6 0%, #d7d7d7 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0 20px 20px 30px;
+    @include media($desktop) {
+      height: 284px;
+      padding: 0 16px 16px 22px;
+    }
+    @include media($mobile) {
+      height: 190px;
+      padding: 0 10px 10px 13px;
+    }
+  }
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 41px;
+    line-height: 98%;
+    color: var(--light-grey);
+    text-transform: uppercase;
+    @include media($desktop) { font-size: 30px; }
+    @include media($mobile) { font-size: 18px; }
+  }
+  &__btn {
+    margin-top: 40px;
+    @include media($desktop) { margin-top: 30px; }
+    @include media($mobile) { margin-top: 20px; }
+  }
+  &__link {
+    @include media(600) {
+      display: none;
+    }
+  }
+}

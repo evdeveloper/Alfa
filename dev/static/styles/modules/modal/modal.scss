@@ -1,0 +1,137 @@
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  padding: 40px 15px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal {
+  $this: &;
+
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 80px 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include media($mobile) {
+    padding: 60px 20px;
+  }
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 41px;
+    line-height: 98%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    @include media($mobile) {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+  }
+  &__form {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    .agree {
+      font-size: 12px;
+      text-align: center;
+      color: #777;
+      margin-top: 8px;
+      @include media($mobile) { margin-top: 16px; }
+    }
+  }
+  &__field {
+    margin-bottom: 14px;
+  }
+  &__success {
+    width: 100%;
+    max-width: 590px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 70px 80px;
+    border-radius: 20px;
+    background-color: #eaeaea;
+    &-title {
+      font-family: var(--second-family);
+      font-weight: 700;
+      font-size: 41px;
+      line-height: 98%;
+      text-align: center;
+      color: rgba(43, 42, 42, 0.9);
+      margin-bottom: 10px;
+    }
+    &-subtitle {
+      font-size: 18px;
+      text-align: center;
+      color: rgba(69, 69, 69, 0.9);
+      @include media($mobile) {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 114%;
+      }
+    }
+    .Button {
+      margin-top: 30px;
+      @include media($mobile) { margin-top: 20px; }
+    }
+    @include media($mobile){
+      border-radius: 16px;
+      padding: 46px 24px;
+    }
+  }
+  &__close {
+    @include size(46px, 100%);
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 100;
+    padding: 14px;
+    transition: background-color var(--duration);
+    cursor: pointer;
+    background-color: #611712;
+    &-icon {
+      @include size(100%);
+      fill: var(--white);
+    }
+    &:hover {
+      background-color: rgba(242,62,50, 0.64);
+    }
+    @include media($mobile) {
+      right: auto;
+      left: 50%;
+      top: -23px;
+      transform: translateX(-50%);
+    }
+  }
+  &__subtitle {
+    max-width: 455px;
+    margin: -14px auto 30px;
+    font-size: 18px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    a {
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    @include media($mobile) {
+      margin: -4px auto 20px;
+      font-size: 16px;
+    }
+  }
+  .Button {
+    margin-top: 20px;
+    @include media($mobile) { margin-top: 10px; }
+  }
+}

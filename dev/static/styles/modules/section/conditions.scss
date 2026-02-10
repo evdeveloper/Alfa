@@ -1,0 +1,45 @@
+.conditions {
+  position: relative;
+  z-index: 1;
+  padding: 110px 130px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: rgba(0,0,0, 0.4);
+  }
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 83px;
+    line-height: 92%;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 48px;
+    span { color: var(--primary); }
+    @include media($desktop) {
+      font-size: 70px;
+      margin-bottom: 30px;
+    }
+    @include media($tablet) { 
+      font-size: 43px;
+      margin-bottom: 20px;
+      line-height: 100%
+    }
+  }
+  @include media($desktop) { 
+    padding: 100px;
+    border-radius: 15px;
+  }
+  @include media($tablet) { padding: 96px 30px; }
+  @include media($mobile) { .Button { width: 100%; } }
+}
